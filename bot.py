@@ -26,7 +26,10 @@ class Bot(commands.Bot):
         if message.echo:
             return
 
-        elif (message.author.name == "pajbot" or message.author.name == "mmattbot") and message.content == "pajaS 🚨 ALERT":
+        elif (
+            message.author.name in ["pajbot", "mmattbot"]
+            and message.content == "pajaS 🚨 ALERT"
+        ):
             response = httpx.post(
                 "https://pajlada.pajbot.com/api/v1/banphrases/test",
                 json={"message": "BatChest 🚨 BAAAAT"},
