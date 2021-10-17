@@ -16,7 +16,7 @@ class Bot(commands.Bot):
         super().__init__(
             token=os.environ.get("TOKEN"),
             prefix="??????? TriHard",
-            initial_channels=["pajlada"],
+            initial_channels=["pajlada", "mmattbtw"],
         )
 
     async def event_ready(self):
@@ -26,7 +26,7 @@ class Bot(commands.Bot):
         if message.echo:
             return
 
-        elif message.author.name == "pajbot" and message.content == "pajaS 🚨 ALERT":
+        elif (message.author.name == "pajbot" or message.author.name == "mmattbot") and message.content == "pajaS 🚨 ALERT":
             response = httpx.post(
                 "https://pajlada.pajbot.com/api/v1/banphrases/test",
                 json={"message": "BatChest 🚨 BAAAAT"},
