@@ -33,7 +33,7 @@ class Bot(commands.Bot):
             )
 
             if response.json()["banned"] == False:
-                await message.channel.send("BatChest 🚨 BAAAAT")
+                await message.channel.send(".me BatChest 🚨 BAAAAT")
             else:
                 print("Banphrased monkaOMEGA")
 
