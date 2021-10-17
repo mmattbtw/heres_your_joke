@@ -15,7 +15,7 @@ class Bot(commands.Bot):
         # initial_channels can also be a callable which returns a list of strings...
         super().__init__(
             token=os.environ.get("TOKEN"),
-            prefix="??????? TriHard",
+            prefix="+ TriHard ",
             initial_channels=["pajlada", "mmattbtw"],
         )
 
