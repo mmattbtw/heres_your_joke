@@ -35,10 +35,26 @@ class Bot(commands.Bot):
                 json={"message": "BatChest 🚨 BAAAAT"},
             )
 
+            print(response.json())
             if response.json()["banned"] == False:
                 await message.channel.send(".me BatChest 🚨 BAAAAT")
             else:
                 print("Banphrased monkaOMEGA")
+
+        await self.handle_commands(message)
+
+    @commands.command(name="dank")
+    async def dank(self, ctx, text: str):
+        if ctx.author.name == "mmattbtw":
+            response = httpx.post(
+                "https://pajlada.pajbot.com/api/v1/banphrases/test",
+                json={"message": text},
+            )
+            print(response.json())
+            if response.json()["banned"] == False:
+                await ctx.send(text)
+            else:
+                await ctx.send("monkaGIGA Banphrased")
 
 
 bot = Bot()
