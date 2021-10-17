@@ -44,7 +44,7 @@ class Bot(commands.Bot):
         await self.handle_commands(message)
 
     @commands.command(name="dank")
-    async def dank(self, ctx, text: str):
+    async def dank(self, ctx, *, text: str):
         if ctx.author.name == "mmattbtw":
             response = httpx.post(
                 "https://pajlada.pajbot.com/api/v1/banphrases/test",
