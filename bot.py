@@ -28,7 +28,7 @@ class Bot(commands.Bot):
 
         elif (
             message.author.name in ["pajbot", "mmattbot"]
-            and message.content == "ACTION pajaS 🚨 ALERT"
+            and message.content == "ACTION pajaS 🚨 ALERT "
         ):
             response = httpx.post(
                 "https://pajlada.pajbot.com/api/v1/banphrases/test",
