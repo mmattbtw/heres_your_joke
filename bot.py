@@ -25,10 +25,9 @@ class Bot(commands.Bot):
     async def event_message(self, message):
         if message.echo:
             return
-
         elif (
             message.author.name in ["pajbot", "mmattbot"]
-            and message.content == "ACTION pajaS 🚨 ALERT "
+            and "pajaS 🚨 ALERT" in message.content
         ):
             response = httpx.post(
                 "https://pajlada.pajbot.com/api/v1/banphrases/test",
@@ -40,7 +39,8 @@ class Bot(commands.Bot):
                 await message.channel.send(".me BatChest 🚨 BAAAAT")
             else:
                 print("Banphrased monkaOMEGA")
-     
+
+        print(message.content)
         await self.handle_commands(message)
 
     @commands.command(name="dank")
