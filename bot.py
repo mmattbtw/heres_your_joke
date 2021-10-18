@@ -40,6 +40,8 @@ class Bot(commands.Bot):
                 await message.channel.send(".me BatChest 🚨 BAAAAT")
             else:
                 print("Banphrased monkaOMEGA")
+        
+        print(message.content)
 
         await self.handle_commands(message)
 
